@@ -309,7 +309,7 @@ const PatientManagement = () => {
                   `${basePath}?patientId=${
                     patient.id
                   }&patientName=${encodeURIComponent(
-                    `${patient.firstName} ${patient.lastName}`
+                    `${patient.firstName}${patient.lastName}`
                   )}`
                 )
               }

@@ -75,7 +75,7 @@ const Auth = () => {
             {role === "admin" ? "Administrator" : "Healthcare Staff"} Access
           </h1>
           <p className="text-muted-foreground text-center mb-8 text-sm">
-            National Healthcare Management System
+            SmartCare Management System
           </p>
 
           <form onSubmit={handleLogin} className="space-y-6">

@@ -54,7 +54,7 @@ const NurseDashboard = () => {
                   Healthcare Staff Portal
                 </h1>
                 <p className="text-xs text-muted-foreground">
-                  National Healthcare Management System
+                  SmartCare Management System
                 </p>
               </div>
             </div>
