@@ -37,7 +37,7 @@ All colors MUST be HSL.
     --ring: 195 85% 42%;
 
     --radius: 0.5rem;
-    
+
     --medical-primary: 195 85% 42%;
     --medical-secondary: 165 75% 45%;
     --medical-accent: 145 65% 48%;
@@ -45,13 +45,13 @@ All colors MUST be HSL.
     --medical-danger: 0 75% 55%;
     --medical-dark: 215 45% 18%;
     --medical-light: 210 35% 96%;
-    
+
     --success: 145 65% 48%;
     --success-foreground: 0 0% 100%;
-    
+
     --warning: 35 85% 55%;
     --warning-foreground: 215 35% 12%;
-    
+
     --info: 205 85% 50%;
     --info-foreground: 0 0% 100%;
 
@@ -119,16 +119,24 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display tracking-tight;
   }
 }
 
 /* Background patterns for visual depth */
 .bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+  background-image: linear-gradient(
+      to right,
+      hsl(var(--border)) 1px,
+      transparent 1px
+    ),
     linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
   background-size: 40px 40px;
 }

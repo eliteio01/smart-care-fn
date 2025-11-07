@@ -164,7 +164,7 @@ export const generateMockRecords = (): MedicalRecord[] => {
 export const getPatientStats = () => {
   const patients = JSON.parse(localStorage.getItem("patients") || "[]");
   const records = JSON.parse(localStorage.getItem("medicalRecords") || "[]");
-  
+
   return {
     totalPatients: patients.length,
     totalRecords: records.length,

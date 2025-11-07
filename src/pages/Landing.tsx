@@ -2,7 +2,17 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Users, FileText, Lock, Activity, Clock, Building2, Award, CheckCircle2 } from "lucide-react";
+import {
+  Shield,
+  Users,
+  FileText,
+  Lock,
+  Activity,
+  Clock,
+  Building2,
+  Award,
+  CheckCircle2,
+} from "lucide-react";
 
 const Landing = () => {
   return (
@@ -10,7 +20,9 @@ const Landing = () => {
       {/* Official Header Bar */}
       <div className="bg-medical-dark text-primary-foreground py-2 px-4 text-sm">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="font-medium">Professional Healthcare Management Platform</span>
+          <span className="font-medium">
+            Professional Healthcare Management Platform
+          </span>
           <span className="flex items-center gap-2">
             <Building2 className="h-4 w-4" />
             Healthcare Solutions
@@ -27,7 +39,9 @@ const Landing = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold">SmartCare</h1>
-              <p className="text-xs text-muted-foreground">Advanced Healthcare Management</p>
+              <p className="text-xs text-muted-foreground">
+                Advanced Healthcare Management
+              </p>
             </div>
           </div>
           <div className="flex gap-3">
@@ -58,16 +72,24 @@ const Landing = () => {
               Advanced Healthcare Management System
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-              Secure, comprehensive, and AI-powered patient care management platform with real-time analytics
+              Secure, comprehensive, and AI-powered patient care management
+              platform with real-time analytics
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Link to="/auth?role=admin">
-                <Button size="lg" className="text-lg px-8 py-6 font-semibold shadow-lg">
+                <Button
+                  size="lg"
+                  className="text-lg px-8 py-6 font-semibold shadow-lg"
+                >
                   Administrator Portal
                 </Button>
               </Link>
               <Link to="/auth?role=nurse">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 font-semibold border-2">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-8 py-6 font-semibold border-2"
+                >
                   Healthcare Staff Portal
                 </Button>
               </Link>
@@ -103,9 +125,12 @@ const Landing = () => {
       {/* Features Section */}
       <section className="py-20 container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">System Capabilities</h2>
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            System Capabilities
+          </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Comprehensive healthcare management tools powered by AI and advanced analytics
+            Comprehensive healthcare management tools powered by AI and advanced
+            analytics
           </p>
         </div>
 
@@ -114,9 +139,12 @@ const Landing = () => {
             <div className="h-14 w-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
               <Users className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="text-2xl font-semibold mb-3 font-display">Patient Registry</h3>
+            <h3 className="text-2xl font-semibold mb-3 font-display">
+              Patient Registry
+            </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Comprehensive patient database with complete demographic information, medical history, and contact details management
+              Comprehensive patient database with complete demographic
+              information, medical history, and contact details management
             </p>
             <ul className="mt-4 space-y-2">
               <li className="flex items-center gap-2 text-sm">
@@ -134,9 +162,12 @@ const Landing = () => {
             <div className="h-14 w-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
               <FileText className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="text-2xl font-semibold mb-3 font-display">Medical Records</h3>
+            <h3 className="text-2xl font-semibold mb-3 font-display">
+              Medical Records
+            </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Digital health records system with support for clinical notes, laboratory results, diagnostic imaging, and prescriptions
+              Digital health records system with support for clinical notes,
+              laboratory results, diagnostic imaging, and prescriptions
             </p>
             <ul className="mt-4 space-y-2">
               <li className="flex items-center gap-2 text-sm">
@@ -154,9 +185,13 @@ const Landing = () => {
             <div className="h-14 w-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
               <Lock className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="text-2xl font-semibold mb-3 font-display">Data Security</h3>
+            <h3 className="text-2xl font-semibold mb-3 font-display">
+              Data Security
+            </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Military-grade end-to-end encryption ensuring complete confidentiality and compliance with healthcare data protection regulations
+              Military-grade end-to-end encryption ensuring complete
+              confidentiality and compliance with healthcare data protection
+              regulations
             </p>
             <ul className="mt-4 space-y-2">
               <li className="flex items-center gap-2 text-sm">
@@ -174,9 +209,12 @@ const Landing = () => {
             <div className="h-14 w-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
               <Shield className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="text-2xl font-semibold mb-3 font-display">Access Control</h3>
+            <h3 className="text-2xl font-semibold mb-3 font-display">
+              Access Control
+            </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Role-based authentication system with granular permissions for administrators, physicians, nurses, and support staff
+              Role-based authentication system with granular permissions for
+              administrators, physicians, nurses, and support staff
             </p>
             <ul className="mt-4 space-y-2">
               <li className="flex items-center gap-2 text-sm">
@@ -194,9 +232,12 @@ const Landing = () => {
             <div className="h-14 w-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
               <Activity className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="text-2xl font-semibold mb-3 font-display">Real-Time Monitoring</h3>
+            <h3 className="text-2xl font-semibold mb-3 font-display">
+              Real-Time Monitoring
+            </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Live updates and notifications for critical patient information, test results, and emergency alerts across care teams
+              Live updates and notifications for critical patient information,
+              test results, and emergency alerts across care teams
             </p>
             <ul className="mt-4 space-y-2">
               <li className="flex items-center gap-2 text-sm">
@@ -214,9 +255,12 @@ const Landing = () => {
             <div className="h-14 w-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
               <Clock className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="text-2xl font-semibold mb-3 font-display">Audit Compliance</h3>
+            <h3 className="text-2xl font-semibold mb-3 font-display">
+              Audit Compliance
+            </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Complete audit trail of all system activities, user actions, and data modifications for regulatory compliance
+              Complete audit trail of all system activities, user actions, and
+              data modifications for regulatory compliance
             </p>
             <ul className="mt-4 space-y-2">
               <li className="flex items-center gap-2 text-sm">
@@ -239,10 +283,15 @@ const Landing = () => {
             Transform Your Healthcare Management
           </h2>
           <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-            Join healthcare facilities using our advanced platform for secure, efficient patient care
+            Join healthcare facilities using our advanced platform for secure,
+            efficient patient care
           </p>
           <Link to="/auth">
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-6 font-semibold">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="text-lg px-8 py-6 font-semibold"
+            >
               Access System Portal
             </Button>
           </Link>
@@ -288,7 +337,10 @@ const Landing = () => {
           </div>
           <div className="border-t pt-8 text-center text-sm text-muted-foreground">
             <p className="mb-2">© 2024 SmartCare. All rights reserved.</p>
-            <p className="font-medium">Professional Healthcare Management Platform • Secure • AI-Powered • Trusted</p>
+            <p className="font-medium">
+              Professional Healthcare Management Platform • Secure • AI-Powered
+              • Trusted
+            </p>
           </div>
         </div>
       </footer>

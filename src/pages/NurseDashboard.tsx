@@ -12,7 +12,7 @@ const NurseDashboard = () => {
   useEffect(() => {
     const isAuthenticated = localStorage.getItem("isAuthenticated");
     const userRole = localStorage.getItem("userRole");
-    
+
     if (!isAuthenticated || userRole !== "nurse") {
       navigate("/auth?role=nurse");
     }
@@ -25,8 +25,18 @@ const NurseDashboard = () => {
 
   const stats = [
     { label: "My Patients", value: "45", icon: Users, color: "text-blue-600" },
-    { label: "Records Added", value: "127", icon: FileText, color: "text-green-600" },
-    { label: "Today's Visits", value: "12", icon: Activity, color: "text-orange-600" },
+    {
+      label: "Records Added",
+      value: "127",
+      icon: FileText,
+      color: "text-green-600",
+    },
+    {
+      label: "Today's Visits",
+      value: "12",
+      icon: Activity,
+      color: "text-orange-600",
+    },
   ];
 
   return (
@@ -40,14 +50,20 @@ const NurseDashboard = () => {
                 <Shield className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gov-navy">Healthcare Staff Portal</h1>
-                <p className="text-xs text-muted-foreground">National Healthcare Management System</p>
+                <h1 className="text-xl font-bold text-gov-navy">
+                  Healthcare Staff Portal
+                </h1>
+                <p className="text-xs text-muted-foreground">
+                  National Healthcare Management System
+                </p>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right hidden md:block">
                 <p className="text-sm font-medium">{userEmail}</p>
-                <Badge variant="outline" className="text-xs">Healthcare Staff</Badge>
+                <Badge variant="outline" className="text-xs">
+                  Healthcare Staff
+                </Badge>
               </div>
               <Button variant="outline" onClick={handleLogout}>
                 <LogOut className="h-4 w-4 mr-2" />
@@ -64,20 +80,33 @@ const NurseDashboard = () => {
           <Clock className="h-5 w-5 text-primary flex-shrink-0" />
           <div>
             <p className="font-semibold text-primary">Welcome back!</p>
-            <p className="text-sm text-muted-foreground">You have 3 patients scheduled for today.</p>
+            <p className="text-sm text-muted-foreground">
+              You have 3 patients scheduled for today.
+            </p>
           </div>
         </div>
 
         {/* Stats Grid */}
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {stats.map((stat) => (
-            <Card key={stat.label} className="p-6 hover:shadow-lg transition-shadow">
+            <Card
+              key={stat.label}
+              className="p-6 hover:shadow-lg transition-shadow"
+            >
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">{stat.label}</p>
-                  <p className="text-3xl font-bold text-gov-navy">{stat.value}</p>
+                  <p className="text-sm text-muted-foreground mb-1">
+                    {stat.label}
+                  </p>
+                  <p className="text-3xl font-bold text-gov-navy">
+                    {stat.value}
+                  </p>
                 </div>
-                <div className={`h-12 w-12 rounded-lg bg-${stat.color.split('-')[1]}-100 flex items-center justify-center`}>
+                <div
+                  className={`h-12 w-12 rounded-lg bg-${
+                    stat.color.split("-")[1]
+                  }-100 flex items-center justify-center`}
+                >
                   <stat.icon className={`h-6 w-6 ${stat.color}`} />
                 </div>
               </div>
@@ -87,7 +116,9 @@ const NurseDashboard = () => {
 
         {/* Quick Actions */}
         <div className="mb-6">
-          <h2 className="text-2xl font-display font-bold mb-4 text-gov-navy">Healthcare Functions</h2>
+          <h2 className="text-2xl font-display font-bold mb-4 text-gov-navy">
+            Healthcare Functions
+          </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -98,9 +129,12 @@ const NurseDashboard = () => {
                   <Users className="h-7 w-7 text-primary group-hover:text-white" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-2xl font-bold mb-2 text-gov-navy font-display">View Patients</h2>
+                  <h2 className="text-2xl font-bold mb-2 text-gov-navy font-display">
+                    View Patients
+                  </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    Access patient profiles, biographical data, medical history, and contact information
+                    Access patient profiles, biographical data, medical history,
+                    and contact information
                   </p>
                   <div className="mt-4 text-sm font-medium text-primary">
                     View Patients →
@@ -117,9 +151,12 @@ const NurseDashboard = () => {
                   <FileText className="h-7 w-7 text-primary group-hover:text-white" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-2xl font-bold mb-2 text-gov-navy font-display">Medical Records</h2>
+                  <h2 className="text-2xl font-bold mb-2 text-gov-navy font-display">
+                    Medical Records
+                  </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    Add clinical notes, upload lab results, and manage prescription records securely
+                    Add clinical notes, upload lab results, and manage
+                    prescription records securely
                   </p>
                   <div className="mt-4 text-sm font-medium text-primary">
                     Manage Records →
@@ -135,8 +172,14 @@ const NurseDashboard = () => {
           <div className="flex items-start gap-3">
             <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
             <div className="text-sm text-muted-foreground">
-              <p className="font-medium text-foreground mb-1">Data Protection & Privacy</p>
-              <p>All patient data is protected under HIPAA regulations. Ensure proper handling of sensitive medical information. All activities are monitored for compliance.</p>
+              <p className="font-medium text-foreground mb-1">
+                Data Protection & Privacy
+              </p>
+              <p>
+                All patient data is protected under HIPAA regulations. Ensure
+                proper handling of sensitive medical information. All activities
+                are monitored for compliance.
+              </p>
             </div>
           </div>
         </div>

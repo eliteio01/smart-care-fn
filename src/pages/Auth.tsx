@@ -18,7 +18,7 @@ const Auth = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email || !password) {
       toast({
         title: "Authentication Error",
@@ -70,7 +70,7 @@ const Auth = () => {
               <Shield className="h-10 w-10 text-primary" />
             </div>
           </div>
-          
+
           <h1 className="text-3xl font-display font-bold text-center mb-2 text-gov-navy">
             {role === "admin" ? "Administrator" : "Healthcare Staff"} Access
           </h1>
@@ -109,7 +109,11 @@ const Auth = () => {
               />
             </div>
 
-            <Button type="submit" className="w-full h-11 text-base font-semibold" size="lg">
+            <Button
+              type="submit"
+              className="w-full h-11 text-base font-semibold"
+              size="lg"
+            >
               <Lock className="h-4 w-4 mr-2" />
               Secure Sign In
             </Button>
@@ -119,7 +123,8 @@ const Auth = () => {
             <div className="bg-muted/50 p-4 rounded-lg">
               <p className="text-xs text-center text-muted-foreground leading-relaxed">
                 <Shield className="h-3 w-3 inline mr-1" />
-                This system is for authorized personnel only. All activities are monitored and logged for security purposes.
+                This system is for authorized personnel only. All activities are
+                monitored and logged for security purposes.
               </p>
             </div>
           </div>

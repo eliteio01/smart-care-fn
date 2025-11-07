@@ -6,8 +6,23 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowLeft, Plus, Search, User, Shield, Cloud, CloudOff, Activity } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  ArrowLeft,
+  Plus,
+  Search,
+  User,
+  Shield,
+  Cloud,
+  CloudOff,
+  Activity,
+} from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { saveAndSync, getSyncStatus } from "@/utils/storage";
 import { generateMockPatients } from "@/utils/mockData";
 
@@ -24,7 +39,7 @@ interface Patient {
   allergies: string;
   lastVisit?: string;
   nextAppointment?: string;
-  riskLevel?: 'low' | 'medium' | 'high';
+  riskLevel?: "low" | "medium" | "high";
 }
 
 const PatientManagement = () => {
@@ -35,6 +50,11 @@ const PatientManagement = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState<Partial<Patient>>({});
   const userRole = localStorage.getItem("userRole");
+
+  let basePath = "/record-management";
+
+  if (userRole === "admin") basePath = "/admin/records";
+  else if (userRole === "nurse") basePath = "/nurse/records";
 
   useEffect(() => {
     const isAuthenticated = localStorage.getItem("isAuthenticated");
@@ -57,7 +77,7 @@ const PatientManagement = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const newPatient: Patient = {
       id: Date.now().toString(),
       firstName: formData.firstName || "",
@@ -84,18 +104,24 @@ const PatientManagement = () => {
     setIsDialogOpen(false);
   };
 
-  const filteredPatients = patients.filter(patient =>
-    `${patient.firstName} ${patient.lastName}`.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredPatients = patients.filter((patient) =>
+    `${patient.firstName} ${patient.lastName}`
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
   );
 
   const syncStatus = getSyncStatus();
 
   const getRiskBadgeColor = (risk?: string) => {
     switch (risk) {
-      case 'high': return 'bg-destructive text-destructive-foreground';
-      case 'medium': return 'bg-warning text-warning-foreground';
-      case 'low': return 'bg-success text-success-foreground';
-      default: return 'bg-muted text-muted-foreground';
+      case "high":
+        return "bg-destructive text-destructive-foreground";
+      case "medium":
+        return "bg-warning text-warning-foreground";
+      case "low":
+        return "bg-success text-success-foreground";
+      default:
+        return "bg-muted text-muted-foreground";
     }
   };
 
@@ -112,11 +138,13 @@ const PatientManagement = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold">Patient Registry Management</h1>
-              <p className="text-xs text-muted-foreground">Registered Patients: {patients.length}</p>
+              <p className="text-xs text-muted-foreground">
+                Registered Patients: {patients.length}
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-2">
-            {syncStatus.status === 'synced' ? (
+            {syncStatus.status === "synced" ? (
               <Badge variant="outline" className="gap-1">
                 <Cloud className="h-3 w-3" />
                 Synced
@@ -146,7 +174,7 @@ const PatientManagement = () => {
               className="pl-10"
             />
           </div>
-          
+
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
               <Button>
@@ -156,7 +184,9 @@ const PatientManagement = () => {
             </DialogTrigger>
             <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
-                <DialogTitle className="text-2xl font-display">Register New Patient</DialogTitle>
+                <DialogTitle className="text-2xl font-display">
+                  Register New Patient
+                </DialogTitle>
               </DialogHeader>
               <form onSubmit={handleSubmit} className="space-y-4 mt-4">
                 <div className="grid md:grid-cols-2 gap-4">
@@ -166,7 +196,9 @@ const PatientManagement = () => {
                       id="firstName"
                       required
                       value={formData.firstName || ""}
-                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, firstName: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -175,7 +207,9 @@ const PatientManagement = () => {
                       id="lastName"
                       required
                       value={formData.lastName || ""}
-                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, lastName: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -185,7 +219,12 @@ const PatientManagement = () => {
                       type="date"
                       required
                       value={formData.dateOfBirth || ""}
-                      onChange={(e) => setFormData({ ...formData, dateOfBirth: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          dateOfBirth: e.target.value,
+                        })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -194,7 +233,9 @@ const PatientManagement = () => {
                       id="gender"
                       required
                       value={formData.gender || ""}
-                      onChange={(e) => setFormData({ ...formData, gender: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, gender: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -203,7 +244,9 @@ const PatientManagement = () => {
                       id="phone"
                       type="tel"
                       value={formData.phone || ""}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -212,7 +255,9 @@ const PatientManagement = () => {
                       id="email"
                       type="email"
                       value={formData.email || ""}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -220,7 +265,9 @@ const PatientManagement = () => {
                     <Input
                       id="bloodType"
                       value={formData.bloodType || ""}
-                      onChange={(e) => setFormData({ ...formData, bloodType: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, bloodType: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -228,7 +275,9 @@ const PatientManagement = () => {
                     <Input
                       id="allergies"
                       value={formData.allergies || ""}
-                      onChange={(e) => setFormData({ ...formData, allergies: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, allergies: e.target.value })
+                      }
                     />
                   </div>
                 </div>
@@ -237,10 +286,14 @@ const PatientManagement = () => {
                   <Input
                     id="address"
                     value={formData.address || ""}
-                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, address: e.target.value })
+                    }
                   />
                 </div>
-                <Button type="submit" className="w-full">Register Patient</Button>
+                <Button type="submit" className="w-full">
+                  Register Patient
+                </Button>
               </form>
             </DialogContent>
           </Dialog>
@@ -248,7 +301,19 @@ const PatientManagement = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPatients.map((patient) => (
-            <Card key={patient.id} className="p-6 hover:shadow-lg transition-shadow border">
+            <Card
+              key={patient.id}
+              className="p-6 hover:shadow-lg transition-all border cursor-pointer hover:scale-105"
+              onClick={() =>
+                navigate(
+                  `${basePath}?patientId=${
+                    patient.id
+                  }&patientName=${encodeURIComponent(
+                    `${patient.firstName} ${patient.lastName}`
+                  )}`
+                )
+              }
+            >
               <div className="flex items-start gap-4">
                 <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <User className="h-7 w-7 text-primary" />
@@ -259,25 +324,34 @@ const PatientManagement = () => {
                       {patient.firstName} {patient.lastName}
                     </h3>
                     {patient.riskLevel && (
-                      <Badge className={`text-xs ${getRiskBadgeColor(patient.riskLevel)}`}>
+                      <Badge
+                        className={`text-xs ${getRiskBadgeColor(
+                          patient.riskLevel
+                        )}`}
+                      >
                         {patient.riskLevel}
                       </Badge>
                     )}
                   </div>
                   <div className="space-y-1 mt-2">
                     <p className="text-sm text-muted-foreground flex items-center gap-2">
-                      <span className="font-medium">DOB:</span> {patient.dateOfBirth}
+                      <span className="font-medium">DOB:</span>{" "}
+                      {patient.dateOfBirth}
                     </p>
                     <p className="text-sm text-muted-foreground flex items-center gap-2">
-                      <span className="font-medium">Blood:</span> {patient.bloodType || "N/A"}
+                      <span className="font-medium">Blood:</span>{" "}
+                      {patient.bloodType || "N/A"}
                     </p>
                     {patient.phone && (
-                      <p className="text-sm text-muted-foreground truncate">{patient.phone}</p>
+                      <p className="text-sm text-muted-foreground truncate">
+                        {patient.phone}
+                      </p>
                     )}
                     {patient.lastVisit && (
                       <p className="text-xs text-muted-foreground flex items-center gap-1 mt-2">
                         <Activity className="h-3 w-3" />
-                        Last visit: {new Date(patient.lastVisit).toLocaleDateString()}
+                        Last visit:{" "}
+                        {new Date(patient.lastVisit).toLocaleDateString()}
                       </p>
                     )}
                   </div>
@@ -290,8 +364,12 @@ const PatientManagement = () => {
         {filteredPatients.length === 0 && (
           <Card className="text-center py-16 border-2 border-dashed">
             <User className="h-16 w-16 text-muted-foreground mx-auto mb-4 opacity-50" />
-            <p className="text-lg font-medium text-muted-foreground">No patients found</p>
-            <p className="text-sm text-muted-foreground mt-2">Start by registering a new patient</p>
+            <p className="text-lg font-medium text-muted-foreground">
+              No patients found
+            </p>
+            <p className="text-sm text-muted-foreground mt-2">
+              Start by registering a new patient
+            </p>
           </Card>
         )}
       </main>

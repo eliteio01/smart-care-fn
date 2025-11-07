@@ -22,18 +22,18 @@ export const syncToCloud = async (): Promise<void> => {
     lastSync: null,
     pendingChanges: 0
   };
-  
+
   localStorage.setItem(STORAGE_KEYS.SYNC_STATUS, JSON.stringify(syncStatus));
-  
+
   // Simulate network delay
   await new Promise(resolve => setTimeout(resolve, 2000));
-  
+
   const completedSync: SyncStatus = {
     status: 'synced',
     lastSync: new Date().toISOString(),
     pendingChanges: 0
   };
-  
+
   localStorage.setItem(STORAGE_KEYS.SYNC_STATUS, JSON.stringify(completedSync));
   localStorage.setItem(STORAGE_KEYS.LAST_SYNC, new Date().toISOString());
 };
@@ -64,7 +64,7 @@ export const markForSync = (): void => {
 export const saveAndSync = async (key: string, data: any): Promise<void> => {
   localStorage.setItem(key, JSON.stringify(data));
   markForSync();
-  
+
   // Auto-sync after a short delay
   setTimeout(() => {
     syncToCloud();
