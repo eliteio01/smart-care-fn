@@ -26,7 +26,7 @@ const Landing = () => {
               <Shield className="h-7 w-7 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-bold">HealthVault Pro</h1>
+              <h1 className="text-xl font-bold">SmartCare</h1>
               <p className="text-xs text-muted-foreground">Advanced Healthcare Management</p>
             </div>
           </div>
@@ -287,7 +287,7 @@ const Landing = () => {
             </div>
           </div>
           <div className="border-t pt-8 text-center text-sm text-muted-foreground">
-            <p className="mb-2">© 2024 HealthVault Pro. All rights reserved.</p>
+            <p className="mb-2">© 2024 SmartCare. All rights reserved.</p>
             <p className="font-medium">Professional Healthcare Management Platform • Secure • AI-Powered • Trusted</p>
           </div>
         </div>
