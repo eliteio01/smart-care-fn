@@ -269,9 +269,9 @@ const RecordManagement = () => {
 
   const filteredGroupedRecords = groupedRecords.filter(
     (group) =>
-      group.patientName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      group.patientName?.toLowerCase().includes(searchTerm?.toLowerCase()) ||
       group.records.some((record) =>
-        record.title.toLowerCase().includes(searchTerm.toLowerCase())
+        record.title?.toLowerCase().includes(searchTerm?.toLowerCase())
       )
   );
 
