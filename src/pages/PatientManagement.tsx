@@ -106,8 +106,8 @@ const PatientManagement = () => {
 
   const filteredPatients = patients.filter((patient) =>
     `${patient.firstName} ${patient.lastName}`
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase())
+      ?.toLowerCase()
+      .includes(searchTerm?.toLowerCase())
   );
 
   const syncStatus = getSyncStatus();
