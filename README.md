@@ -19,7 +19,7 @@ Follow these steps:
 
 ```bash
 # Step 1: Clone the repository
-git clone <YOUR_GIT_URL>
+git clone git@github.com:eliteio01/smart-care-fn.git
 
 # Step 2: Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
