@@ -39,8 +39,8 @@ export const generateMockPatients = (): Patient[] => {
       address: "123 Main St, New York, NY 10001",
       bloodType: "O+",
       allergies: "Penicillin",
-      lastVisit: "2024-01-15",
-      nextAppointment: "2024-02-20",
+      lastVisit: "2025-01-15",
+      nextAppointment: "2025-02-20",
       riskLevel: "low"
     },
     {
@@ -54,8 +54,8 @@ export const generateMockPatients = (): Patient[] => {
       address: "456 Oak Ave, Los Angeles, CA 90001",
       bloodType: "A+",
       allergies: "None",
-      lastVisit: "2024-01-18",
-      nextAppointment: "2024-02-15",
+      lastVisit: "2025-01-18",
+      nextAppointment: "2025-02-15",
       riskLevel: "medium"
     },
     {
@@ -69,8 +69,8 @@ export const generateMockPatients = (): Patient[] => {
       address: "789 Pine Rd, Chicago, IL 60601",
       bloodType: "B+",
       allergies: "Latex, Aspirin",
-      lastVisit: "2024-01-20",
-      nextAppointment: "2024-03-01",
+      lastVisit: "2025-01-20",
+      nextAppointment: "2025-03-01",
       riskLevel: "low"
     },
     {
@@ -84,8 +84,8 @@ export const generateMockPatients = (): Patient[] => {
       address: "321 Elm St, Houston, TX 77001",
       bloodType: "AB+",
       allergies: "Shellfish",
-      lastVisit: "2024-01-12",
-      nextAppointment: "2024-02-10",
+      lastVisit: "2025-01-12",
+      nextAppointment: "2025-02-10",
       riskLevel: "high"
     },
     {
@@ -99,8 +99,8 @@ export const generateMockPatients = (): Patient[] => {
       address: "654 Maple Dr, Phoenix, AZ 85001",
       bloodType: "O-",
       allergies: "Peanuts",
-      lastVisit: "2024-01-22",
-      nextAppointment: "2024-02-25",
+      lastVisit: "2025-01-22",
+      nextAppointment: "2025-02-25",
       riskLevel: "medium"
     }
   ];
@@ -115,7 +115,7 @@ export const generateMockRecords = (): MedicalRecord[] => {
       title: "Annual Physical Examination",
       content: "Patient presents for routine annual physical. Vitals stable. No acute concerns noted.",
       encryptedContent: "",
-      date: "2024-01-15",
+      date: "2025-01-15",
       uploadedBy: "Dr. Anderson"
     },
     {
@@ -125,7 +125,7 @@ export const generateMockRecords = (): MedicalRecord[] => {
       title: "Blood Work - Complete Panel",
       content: "Complete blood count and metabolic panel. All values within normal range.",
       encryptedContent: "",
-      date: "2024-01-10",
+      date: "2025-01-10",
       uploadedBy: "Lab Tech"
     },
     {
@@ -135,7 +135,7 @@ export const generateMockRecords = (): MedicalRecord[] => {
       title: "Blood Pressure Medication",
       content: "Lisinopril 10mg, once daily. 30-day supply with 2 refills.",
       encryptedContent: "",
-      date: "2024-01-18",
+      date: "2025-01-18",
       uploadedBy: "Dr. Martinez"
     },
     {
@@ -145,7 +145,7 @@ export const generateMockRecords = (): MedicalRecord[] => {
       title: "Chest X-Ray",
       content: "Routine chest x-ray. No abnormalities detected. Lungs clear.",
       encryptedContent: "",
-      date: "2024-01-20",
+      date: "2025-01-20",
       uploadedBy: "Radiology Dept"
     },
     {
@@ -155,7 +155,7 @@ export const generateMockRecords = (): MedicalRecord[] => {
       title: "Follow-up Visit - Diabetes Management",
       content: "Blood sugar levels improving with current medication. Patient demonstrates good understanding of diet modifications.",
       encryptedContent: "",
-      date: "2024-01-12",
+      date: "2025-01-12",
       uploadedBy: "Dr. Chen"
     }
   ];
